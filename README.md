@@ -24,7 +24,7 @@ create branch from master
 ___
 
 
-from `master` 
+from `master` branch (the branch you want to **merge into**)
 
 		git merge <branch-to-merge-into-master>
 
@@ -34,19 +34,23 @@ Merging commits from one branch into another branch with nothing new on it. It i
 
 		git branch -d <branch-to-delete>
 
-deletes a branch you no longer need after it's been merged
+--> deletes a branch you no longer need after it's been merged
 
 		git checkout -b <new-branch>
 
-creates a new branch and switches to it 
+--> creates a new branch and switches to it 
 
 * Make a few commits on new branch
 
 While you're working on your branch, suddenly...
 
-* Changes must be made to the `master` branch, switch to `master` and commit some new changes. 
+* Changes must be made to the `master` branch, so you switch to `master` and commit some new changes. 
 
-when going back to the master, `git pull` to make sure you have the most current version, and fix whatever you need to on the `master` branch.
+Now that you're back on the `master` branch, you need sync your local repository with the remote repository.
+
+		git pull 
+
+--> to make sure you have the most current version, and fix whatever you need to on the `master` branch.
 
 * Switch back to your other branch and finish your feature
 
@@ -70,5 +74,124 @@ To save and go back to command line
 
 ### Recursive Merge
 Git can't fast forward since changes were made in both branches. It recursively merges the two, and creates a commit in the log, merging them together.
+
+___
+
+# Colaboration Basics
+
+### `git pull`
+Syncs our **local** repository with the **remote** one `git fetch`
+Locally merges our `origin/master` branch with `master`. It's the same as
+		
+		git merge origin/master
+
+
+### merge commit
+The prompt that pops up when trying to merge to master — forces a recursive merge.
+Now we need to push to origin master with `git push`. Making our local and origin/master the same
+
+	
+### merge conflicts
+
+![merge conflict]()
+
+This needs to be edited manually. After fixing the conflict
+
+		git commit -a
+
+to perform a **merge commit**. You'll be taken to an editor and will need to save and confirm changes.
+Finally, 
+
+		git push
+
+to sync with the remote repository
+
+___
+
+# Remote Branches & Tags
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
